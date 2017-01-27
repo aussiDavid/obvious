@@ -148,7 +148,7 @@ module Obvious
       end
 
       # we want result to be output_shape's shape
-      has_shape, error_field = result.has_shape? output_shape, true
+      has_shape, error_field = result.to_hash.has_shape? output_shape, true
       unless has_shape 
         raise ContractOutputError, "incorrect output data format field #{error_field}"
       end
